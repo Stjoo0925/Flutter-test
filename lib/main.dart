@@ -6,15 +6,33 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-
     return MaterialApp(
-      home: Center(
-        child: Container( width: 50, height: 50, color: Colors.blue),
-      )
+      home: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.blue,
+          title: Text('연락처'),
+        ),
+        body: Center(
+          child: Text('안녕')
+        ),
+        bottomNavigationBar: BottomAppBar(
+          color: Colors.blue,
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Icon(Icons.phone),
+                Icon(Icons.comment),
+                Icon(Icons.contact_page),
+              ],
+            ),
+          ),
+        ),
+      ),
     );
-
   }
 }
-
